@@ -1,0 +1,22 @@
+<div *ngIf = "pokemon">
+    <h2>{{pokemon.name}}</h2>
+    <div>
+        Name:
+        <input [(ngModel)]="pokemon.name" placeholder="Name"/>
+    </div>
+    <div>
+        Type 1:
+        <input [(ngModel)]="pokemon.type1" placeholder="Type 1"/>
+    </div>
+    <div>
+        Type 2:
+        <input [(ngModel)]="pokemon.type2" placeholder="Type 2"/>
+    </div>
+    <div>
+        Region:
+        <input [(ngModel)]="pokemon.region" placeholder="Region"/>
+    </div>
+    <button (click)="updatePokemon(pokemon)" *ngIf="pokemon.id">Save</button>
+    <button (click)="deletePokemon(pokemon)" *ngIf="pokemon.id">Delete</button>
+    <button (click)="createPokemon(pokemon)" *ngIf="!pokemon.id">Create</button>
+</div>

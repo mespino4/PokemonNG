@@ -1,0 +1,24 @@
+<button (click)="initNewPokemon()">Create new pokemon</button>
+
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Type 1</th>
+    <th>Type 2</th>
+    <th>Region</th>
+  </thead>
+  <thead>
+    <tr *ngFor="let pokemon of pokemons">
+      <th>{{pokemon.name}}</th>
+      <th>{{pokemon.type1}}</th>
+      <th>{{pokemon.type2}}</th>
+      <th>{{pokemon.region}}</th>
+      <td><button (click)="editPokemon(pokemon)">Edit</button></td>
+    </tr>
+  </thead>
+</table>
+
+<app-edit-pokemon 
+  [pokemon]="pokemonToEdit" 
+  (pokemonsUpdated)="updatePokemonList($event)">
+</app-edit-pokemon>
